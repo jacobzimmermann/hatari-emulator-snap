@@ -1,0 +1,62 @@
+name: hatari-emulator
+version: '2.0.0-0'
+summary: Atari ST/STE/TT/Falcon emulator
+description: |
+  Hatari supports the emulation of most of the ST and STE hardware, including
+  some special tricks like raster interrupts, border effects and PSG sample
+  sound. A joystick can be emulated with the cursor keys or with a real PC
+  joystick. Hatari also features the possibility to "mount" a directory of the
+  host system as a ST drive, or to use images from an original Atari's hard
+  disk.
+
+  Hatari is also able to emulate the additional hardware of the TT or Falcon
+  machines, like the Videl video chip or the DSP 56001. However, note that TT
+  and Falcon support are currently still in development and experimental.
+
+grade: stable
+confinement: strict
+
+apps:
+  hatari:
+    command: hatari
+    plugs: [unity7, pulseaudio, home]
+  atari-convert-dir:
+    command: atari-convert-dir
+    plugs: [home]
+  atari-hd-image:
+    command: atari-hd-image
+    plugs: [home]
+  gst2ascii:
+    command: gst2ascii
+    plugs: [home]
+  hmsa:
+    command: hmsa
+    plugs: [home]
+  zip2st:
+    command: zip2st
+    plugs: [home]
+
+parts:
+  dosfstools:
+    plugin: nil
+    stage-packages: [dosfstools]
+    organize:
+      sbin/*: bin/
+    snap:
+      - -usr/share
+      - -sbin
+
+  hatari:
+    plugin: autotools
+    source: http://download.tuxfamily.org/hatari/2.0.0/hatari-2.0.0.tar.bz2
+    build-packages:
+      - cmake
+      - libsdl2-dev
+      - zlib1g-dev
+      - libpng-dev
+    snap:
+      - -share/applications
+      - -share/doc
+      - -share/man
+
+
