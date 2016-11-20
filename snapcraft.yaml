@@ -58,5 +58,7 @@ parts:
       - -share/applications
       - -share/doc
       - -share/man
+      - -share/hatari/hatariui
+      - -share/hatari/hconsole
 
 
