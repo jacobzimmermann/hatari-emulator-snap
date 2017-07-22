@@ -42,7 +42,7 @@ parts:
     stage-packages: [dosfstools]
     organize:
       sbin/*: bin/
-    snap:
+    prime:
       - -usr/share
       - -sbin
 
@@ -54,7 +54,7 @@ parts:
       - libsdl2-dev
       - zlib1g-dev
       - libpng-dev
-    snap:
+    prime:
       - -share/applications
       - -share/doc
       - -share/man
