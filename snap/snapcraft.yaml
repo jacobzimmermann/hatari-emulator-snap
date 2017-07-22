@@ -1,5 +1,5 @@
 name: hatari-emulator
-version: '2.0.0-0'
+version: '2.0.0-1'
 summary: Atari ST/STE/TT/Falcon emulator
 description: |
   Hatari supports the emulation of most of the ST and STE hardware, including
