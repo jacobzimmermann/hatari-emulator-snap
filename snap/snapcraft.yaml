@@ -19,7 +19,7 @@ confinement: strict
 apps:
   hatari:
     command: hatari
-    plugs: [unity7, pulseaudio, home]
+    plugs: [unity7, alsa, process-control, pulseaudio, home]
   atari-convert-dir:
     command: atari-convert-dir
     plugs: [home]
