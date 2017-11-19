@@ -19,7 +19,7 @@ confinement: strict
 apps:
   hatari:
     command: hatari
-    plugs: [desktop, desktop-legacy, x11, home, process-control, pulseaudio, joystick]
+    plugs: [desktop, desktop-legacy, x11, home, process-control, pulseaudio, joystick, raw-usb]
   atari-convert-dir:
     command: atari-convert-dir
     plugs: [home]
