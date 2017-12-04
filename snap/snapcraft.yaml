@@ -1,5 +1,5 @@
 name: hatari-emulator
-version: '2.0.0-4'
+version: '2.0.0'
 summary: Atari ST/STE/TT/Falcon emulator
 description: |
   Hatari supports the emulation of most of the ST and STE hardware, including
@@ -19,7 +19,7 @@ confinement: strict
 apps:
   hatari:
     command: hatari
-    plugs: [desktop, desktop-legacy, x11, home, process-control, pulseaudio, joystick, raw-usb]
+    plugs: [desktop, wayland, x11, home, pulseaudio, joystick]
   atari-convert-dir:
     command: atari-convert-dir
     plugs: [home]
@@ -54,6 +54,8 @@ parts:
       - libsdl2-dev
       - zlib1g-dev
       - libpng-dev
+      - portaudio19-dev
+      - libreadline-dev
     prime:
       - -share/applications
       - -share/doc
