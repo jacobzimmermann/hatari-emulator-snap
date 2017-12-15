@@ -19,7 +19,7 @@ confinement: strict
 apps:
   hatari:
     command: hatari
-    plugs: [desktop, wayland, x11, home, pulseaudio, joystick, process-control]
+    plugs: [desktop, wayland, x11, home, pulseaudio, alsa, joystick]
   atari-convert-dir:
     command: atari-convert-dir
     plugs: [home]
@@ -54,7 +54,6 @@ parts:
       - libsdl2-dev
       - zlib1g-dev
       - libpng-dev
-      - portaudio19-dev
       - libreadline-dev
     prime:
       - -share/applications
