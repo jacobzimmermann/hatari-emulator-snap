@@ -70,6 +70,7 @@ parts:
       - -share/man
       - -share/hatari/hatariui
       - -share/hatari/hconsole
-    install: |
+    override-build: |
+      snapcraftctl build
       echo Stripping
       strip $SNAPCRAFT_PART_INSTALL/bin/* 2>/dev/null || /bin/true
