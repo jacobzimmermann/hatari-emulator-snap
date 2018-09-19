@@ -47,6 +47,8 @@ apps:
 
 parts:
   dosfstools:
+    build-attributes:
+      - no-system-libraries
     plugin: nil
     stage-packages: [dosfstools]
     organize:
@@ -55,15 +57,30 @@ parts:
       - -usr/share
       - -sbin
 
+  mtools:
+    build-attributes:
+      - no-system-libraries
+    plugin: nil
+    stage-packages: [mtools]
+    prime:
+      - -usr/share
+
   hatari:
     plugin: autotools
     source: http://download.tuxfamily.org/hatari/2.1.0/hatari-2.1.0.tar.bz2
+    build-attributes:
+      - no-system-libraries
     build-packages:
       - cmake
       - libsdl2-dev
       - zlib1g-dev
       - libpng-dev
       - libreadline-dev
+    stage-packages:
+      - libsdl2-2.0-0
+      - libpulse0
+    organize:
+      usr/lib/*/pulseaudio/libpulsecommon*: usr/lib/
     prime:
       - -share/applications
       - -share/doc
