@@ -15,6 +15,7 @@ description: |
 
 grade: stable
 confinement: strict
+base: core18
 
 apps:
   hatari:
@@ -47,8 +48,6 @@ apps:
 
 parts:
   dosfstools:
-    build-attributes:
-      - no-system-libraries
     plugin: nil
     stage-packages: [dosfstools]
     organize:
@@ -58,8 +57,6 @@ parts:
       - -sbin
 
   mtools:
-    build-attributes:
-      - no-system-libraries
     plugin: nil
     stage-packages: [mtools]
     prime:
@@ -68,16 +65,16 @@ parts:
   hatari:
     plugin: autotools
     source: http://download.tuxfamily.org/hatari/2.1.0/hatari-2.1.0.tar.bz2
-    build-attributes:
-      - no-system-libraries
     build-packages:
       - cmake
       - libsdl2-dev
       - zlib1g-dev
       - libpng-dev
       - libreadline-dev
+      - python
     stage-packages:
       - libsdl2-2.0-0
+      - libpng16-16
       - libpulse0
     organize:
       usr/lib/*/pulseaudio/libpulsecommon*: usr/lib/
