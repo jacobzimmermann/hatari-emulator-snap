@@ -64,7 +64,7 @@ parts:
 
   hatari:
     plugin: autotools
-    source: http://download.tuxfamily.org/hatari/2.1.0/hatari-2.1.0.tar.bz2
+    source: http://download.tuxfamily.org/hatari/2.2.0/hatari-2.2.0.tar.bz2
     build-packages:
       - cmake
       - libsdl2-dev
