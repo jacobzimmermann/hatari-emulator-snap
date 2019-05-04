@@ -1,5 +1,5 @@
 name: hatari-emulator
-version: '2.2.0'
+version: '2.2.1'
 summary: Atari ST/STE/TT/Falcon emulator
 description: |
   Hatari supports the emulation of most of the ST and STE hardware, including
@@ -64,7 +64,7 @@ parts:
 
   hatari:
     plugin: autotools
-    source: http://download.tuxfamily.org/hatari/2.2.0/hatari-2.2.0.tar.bz2
+    source: http://download.tuxfamily.org/hatari/2.2.1/hatari-2.2.1.tar.bz2
     build-packages:
       - cmake
       - libsdl2-dev
