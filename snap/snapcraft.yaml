@@ -1,5 +1,5 @@
 name: hatari-emulator
-version: '2.2.1'
+version: '2.3.1'
 summary: Atari ST/STE/TT/Falcon emulator
 description: |
   Hatari supports the emulation of most of the ST and STE hardware, including
@@ -15,11 +15,11 @@ description: |
 
 grade: stable
 confinement: strict
-base: core18
+base: core20
 
 apps:
   hatari:
-    command: hatari
+    command: usr/bin/hatari
     plugs:
       - desktop
       - wayland
@@ -31,19 +31,19 @@ apps:
       - process-control
       - joystick
   atari-convert-dir:
-    command: atari-convert-dir
+    command: usr/bin/atari-convert-dir
     plugs: [home]
   atari-hd-image:
-    command: atari-hd-image
+    command: usr/bin/atari-hd-image
     plugs: [home]
   gst2ascii:
-    command: gst2ascii
+    command: usr/bin/gst2ascii
     plugs: [home]
   hmsa:
-    command: hmsa
+    command: usr/bin/hmsa
     plugs: [home]
   zip2st:
-    command: zip2st
+    command: usr/bin/zip2st
     plugs: [home]
 
 parts:
@@ -64,7 +64,9 @@ parts:
 
   hatari:
     plugin: autotools
-    source: http://download.tuxfamily.org/hatari/2.2.1/hatari-2.2.1.tar.bz2
+    source: http://download.tuxfamily.org/hatari/2.3.1/hatari-2.3.1.tar.bz2
+    autotools-configure-parameters:
+      - --prefix=/usr
     build-packages:
       - cmake
       - libsdl2-dev
